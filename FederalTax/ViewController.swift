@@ -61,35 +61,35 @@ let personNameMessage = ("Your Federal Tax Owing is")
     switch doubleAnnualIncome {
     case 0...47630:
         let taxBracket1 = doubleAnnualIncome * 0.15
-        taxOwing.text = String(taxBracket1)
-        taxRate.text = String(taxBracket1/doubleAnnualIncome * 100)
-        nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
-        
+        taxOwing.text = String(format: "$%.2f",taxBracket1)
+        taxRate.text = String(format: "$%.1f",taxBracket1/doubleAnnualIncome * 100)
+        //nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
+        nameOutput.text = personNameMessage
     
     case 47631...95259:
         let taxBracket2 = (doubleAnnualIncome - 47630) * 0.205
-        taxOwing.text = String(taxBracket2 + taxBracket1Overall)
-        taxRate.text = String((taxBracket2 + taxBracket1Overall)/doubleAnnualIncome * 100)
-        nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
+        taxOwing.text = String(format: "$%.2f",(taxBracket2 + taxBracket1Overall))
+        taxRate.text = String(format: "$%.1f",((taxBracket2 + taxBracket1Overall)/doubleAnnualIncome * 100))
+        nameOutput.text = personNameMessage
         
     case 952260...147667:
         let taxBracket3 = (doubleAnnualIncome - 95259) * 0.26
-        taxOwing.text = String(taxBracket3 + taxBracket2Overall)
-        taxRate.text = String((taxBracket3 + taxBracket2Overall)/doubleAnnualIncome * 100)
-        nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
+        taxOwing.text = String(format: "$%.2f",(taxBracket3 + taxBracket2Overall))
+        taxRate.text = String(format: "$%.1f",((taxBracket3 + taxBracket2Overall)/doubleAnnualIncome * 100))
+        nameOutput.text = personNameMessage
         
     case 147668...210371:
         let taxBracket4 = (doubleAnnualIncome - 147667) * 0.29
-        taxOwing.text = String(taxBracket4 + taxBracket3Overall)
-        taxRate.text = String((taxBracket4 + taxBracket3Overall)/doubleAnnualIncome * 100)
-        nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
+        taxOwing.text = String(format: "$%.2f",(taxBracket4 + taxBracket3Overall))
+        taxRate.text = String(format: "$%.1f",((taxBracket4 + taxBracket3Overall)/doubleAnnualIncome * 100))
+        nameOutput.text = personNameMessage
             
    
         default:
             let taxBracket5 = (doubleAnnualIncome - 210371) * 0.33
-            taxOwing.text = String(taxBracket5 + taxBracket4Overall)
-            taxRate.text = String((taxBracket5 + taxBracket4Overall)/doubleAnnualIncome * 100)
-        nameOutput.text = String("\(NameInput.text)\(personNameMessage)")
+            taxOwing.text = String(format: "$%.2f",(taxBracket5 + taxBracket4Overall))
+            taxRate.text = String(format: "$%.1f",((taxBracket5 + taxBracket4Overall)/doubleAnnualIncome * 100))
+        nameOutput.text = personNameMessage
         
         
         }
